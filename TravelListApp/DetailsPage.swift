@@ -37,6 +37,7 @@ class DetailsPage: UIViewController, (UIImagePickerControllerDelegate & UINaviga
     @IBOutlet weak var subtitleText: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var toolbar: UIToolbar!
     
     
     //MARK: - Statement Func
@@ -128,7 +129,11 @@ class DetailsPage: UIViewController, (UIImagePickerControllerDelegate & UINaviga
         view.addGestureRecognizer(imageRecongizer)
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+       toolbar.barTintColor = UIColor(red: 0.20, green: 0.24, blue: 0.22, alpha: 0.86)
+        navigationItem.title = "Add a travel"
+  
+    }
     
     //MARK: - Functions
     @objc func hiddenKeyword(){
@@ -188,7 +193,7 @@ class DetailsPage: UIViewController, (UIImagePickerControllerDelegate & UINaviga
             return nil
         }
         
-        let reuseId = "MyAnnotation"
+        let reuseId = "myAnnotation"
         
         var pv = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         

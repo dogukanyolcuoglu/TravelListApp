@@ -23,6 +23,7 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var toolbar: UIToolbar!
     
     //MARK: - Statement func
     override func viewDidLoad() {
@@ -34,6 +35,8 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addClickedButton))
         
+        
+        
         getData()
     }
     
@@ -42,15 +45,17 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
         let appearance = UINavigationBarAppearance()
 
-        appearance.backgroundColor = UIColor(red: 0.5, green: 12, blue: 123, alpha: 23)
-        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 25)!,NSAttributedString.Key.foregroundColor: UIColor.black]
+        appearance.backgroundColor = UIColor(red: 0.20, green: 0.24, blue: 0.22, alpha: 0.86)
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 22)!,NSAttributedString.Key.foregroundColor: UIColor.orange]
         navigationItem.title = "My list"
-
-        navigationController?.navigationBar.tintColor = .black
+        
+        navigationController?.navigationBar.tintColor = .orange
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-
+        
+        toolbar.barTintColor = UIColor(red: 0.20, green: 0.24, blue: 0.22, alpha: 0.86)
+        
     }
     
     //MARK: - Functions
@@ -94,6 +99,9 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     @objc func addClickedButton(){
         choosenCountry = ""
+        let backItem = UIBarButtonItem()
+        backItem.title = "List"
+        navigationItem.backBarButtonItem = backItem
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
         
     }
@@ -102,7 +110,7 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayTitle.count;
+        return arrayCountry.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -140,15 +148,17 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
                             if id == arrayId[indexPath.row] {
                                 
                                 context.delete(result)
-                                
+
                                 arrayId.remove(at: indexPath.row)
                                 arrayCountry.remove(at: indexPath.row)
                                 arrayImage.remove(at: indexPath.row)
                                 arrayCity.remove(at: indexPath.row)
+                            
+                                self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
                                 
                                 self.tableView.reloadData()
+                     
                             }
-                            
                             do {
                                 try context.save()
                             } catch {

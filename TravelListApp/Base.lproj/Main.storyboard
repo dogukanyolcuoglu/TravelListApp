@@ -76,7 +76,6 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hn1-Wg-24C">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items/>
-                                <color key="barTintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yAE-Bh-Dmz"/>
@@ -94,6 +93,7 @@
                     <navigationItem key="navigationItem" id="hnb-Kh-iz3"/>
                     <connections>
                         <outlet property="tableView" destination="cYf-Ff-uFx" id="vuf-cW-tWb"/>
+                        <outlet property="toolbar" destination="Hn1-Wg-24C" id="gEW-nl-FaJ"/>
                         <segue destination="jX3-5p-BxH" kind="show" identifier="toDetailsVC" id="ape-tX-8gO"/>
                     </connections>
                 </viewController>
@@ -174,7 +174,6 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-Fz-7L0">
                                 <rect key="frame" x="0.0" y="847" width="414" height="49"/>
                                 <items/>
-                                <color key="barTintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="arL-EI-b45"/>
@@ -227,6 +226,7 @@
                         <outlet property="searchButton" destination="R7W-8a-tu0" id="Sgl-8u-HZ9"/>
                         <outlet property="subtitleText" destination="uo3-Gp-hfg" id="o1Y-gv-gBO"/>
                         <outlet property="titleText" destination="808-yn-z6w" id="qUa-MO-tFf"/>
+                        <outlet property="toolbar" destination="Fhl-Fz-7L0" id="jjc-WB-7uq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H07-C5-z0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
