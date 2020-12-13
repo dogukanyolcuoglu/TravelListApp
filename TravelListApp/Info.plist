@@ -64,5 +64,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>to access photo library</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>to access your location</string>
 </dict>
 </plist>

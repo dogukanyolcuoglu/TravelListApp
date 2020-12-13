@@ -27,41 +27,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rCO-fT-poE">
-                                                    <rect key="frame" x="16" y="5" width="109" height="96"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCO-fT-poE">
+                                                    <rect key="frame" x="16" y="11" width="116" height="85"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="96" id="DO3-3v-6Tv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şehir adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7f-Uu-Na7">
-                                                    <rect key="frame" x="146" y="54" width="234" height="42"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Şehir adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7f-Uu-Na7">
+                                                    <rect key="frame" x="150" y="51" width="234" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="ujH-Te-F7Q"/>
+                                                        <constraint firstAttribute="height" constant="36" id="ujH-Te-F7Q"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="GranthaSangamMN-Regular" family="Grantha Sangam MN" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ülke adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-yV-Nrx">
-                                                    <rect key="frame" x="146" y="11" width="224" height="43"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ülke adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-yV-Nrx">
+                                                    <rect key="frame" x="146" y="18" width="224" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="ikO-Gt-g1c"/>
+                                                        <constraint firstAttribute="height" constant="36" id="ikO-Gt-g1c"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="B7f-Uu-Na7" firstAttribute="leading" secondItem="rCO-fT-poE" secondAttribute="trailing" constant="21" id="3gK-SA-kFD"/>
+                                                <constraint firstItem="B7f-Uu-Na7" firstAttribute="leading" secondItem="rCO-fT-poE" secondAttribute="trailing" constant="25" id="3gK-SA-kFD"/>
                                                 <constraint firstItem="KeP-yV-Nrx" firstAttribute="top" secondItem="AVi-8x-ImR" secondAttribute="top" constant="11" id="4Ou-zm-ke7"/>
                                                 <constraint firstAttribute="trailing" secondItem="rCO-fT-poE" secondAttribute="trailing" constant="289" id="61l-yC-tYa"/>
                                                 <constraint firstItem="KeP-yV-Nrx" firstAttribute="leading" secondItem="rCO-fT-poE" secondAttribute="trailing" constant="21" id="68Z-mE-1Jc"/>
-                                                <constraint firstItem="B7f-Uu-Na7" firstAttribute="top" secondItem="KeP-yV-Nrx" secondAttribute="bottom" id="94p-58-oBK"/>
+                                                <constraint firstItem="B7f-Uu-Na7" firstAttribute="top" secondItem="KeP-yV-Nrx" secondAttribute="bottom" constant="-2" id="94p-58-oBK"/>
                                                 <constraint firstItem="rCO-fT-poE" firstAttribute="leading" secondItem="AVi-8x-ImR" secondAttribute="leading" constant="16" id="Dij-hn-4PW"/>
                                                 <constraint firstAttribute="trailing" secondItem="KeP-yV-Nrx" secondAttribute="trailing" constant="44" id="NTd-d6-Mpg"/>
                                                 <constraint firstAttribute="bottom" secondItem="rCO-fT-poE" secondAttribute="bottom" constant="6" id="OOe-ph-Tbz"/>
-                                                <constraint firstAttribute="trailing" secondItem="B7f-Uu-Na7" secondAttribute="trailing" constant="34" id="mlO-cf-730"/>
+                                                <constraint firstAttribute="trailing" secondItem="B7f-Uu-Na7" secondAttribute="trailing" constant="30" id="mlO-cf-730"/>
                                                 <constraint firstItem="rCO-fT-poE" firstAttribute="top" secondItem="AVi-8x-ImR" secondAttribute="top" constant="5" id="zgZ-e0-PKT"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -20,7 +20,6 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var arrayCountry = [String]()
     var arrayCity = [String]()
     
-    
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var toolbar: UIToolbar!
@@ -45,16 +44,16 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
         let appearance = UINavigationBarAppearance()
 
-        appearance.backgroundColor = UIColor(red: 0.20, green: 0.24, blue: 0.22, alpha: 0.86)
-        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 22)!,NSAttributedString.Key.foregroundColor: UIColor.orange]
-        navigationItem.title = "My list"
+        appearance.backgroundColor = UIColor(red: 0.16, green: 0.50, blue: 0.31, alpha: 1.00)
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 22)!,NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationItem.title = "MyList"
         
-        navigationController?.navigationBar.tintColor = .orange
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        toolbar.barTintColor = UIColor(red: 0.20, green: 0.24, blue: 0.22, alpha: 0.86)
+        toolbar.barTintColor = UIColor(red: 0.16, green: 0.50, blue: 0.31, alpha: 1.00)
         
     }
     
@@ -63,13 +62,13 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        let fetchEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Travels")
+        let fetchEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Travel")
         fetchEntity.returnsObjectsAsFaults = false
         
         do {
             let results = try context.fetch(fetchEntity)
             if results.count > 0 {
-                arrayTitle.removeAll(keepingCapacity: false)
+                arrayCountry.removeAll(keepingCapacity: false)
                 arrayId.removeAll(keepingCapacity: false)
                 
                 for result in results as! [NSManagedObject] {
@@ -134,7 +133,7 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
-            let fetchEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Travels")
+            let fetchEntity = NSFetchRequest<NSFetchRequestResult>(entityName: "Travel")
             
             let idString = arrayId[indexPath.row].uuidString
             fetchEntity.returnsObjectsAsFaults = false
@@ -153,12 +152,9 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
                                 arrayCountry.remove(at: indexPath.row)
                                 arrayImage.remove(at: indexPath.row)
                                 arrayCity.remove(at: indexPath.row)
-                            
-                                self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
-                                
-                                self.tableView.reloadData()
                      
                             }
+                            self.tableView.reloadData()
                             do {
                                 try context.save()
                             } catch {
