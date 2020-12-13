@@ -19,6 +19,7 @@ class DetailsPage: UIViewController, (UIImagePickerControllerDelegate & UINaviga
     
     var selectedCountry = ""
     var selectedId = UUID()
+    var navigationTitles = ""
     
     
     var annotationTitle = ""
@@ -140,8 +141,7 @@ class DetailsPage: UIViewController, (UIImagePickerControllerDelegate & UINaviga
     }
     override func viewWillAppear(_ animated: Bool) {
         toolbar.barTintColor = UIColor(red: 0.16, green: 0.50, blue: 0.31, alpha: 1.00)
-        navigationItem.title = "Add Travel"
-        
+        navigationItem.title = navigationTitles
     }
     
     //MARK: - Functions

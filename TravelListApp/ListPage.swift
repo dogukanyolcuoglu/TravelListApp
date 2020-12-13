@@ -20,6 +20,7 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var arrayCountry = [String]()
     var arrayCity = [String]()
     
+    var navigaitonTitles = ""
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var toolbar: UIToolbar!
@@ -105,6 +106,7 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let backItem = UIBarButtonItem()
         backItem.title = "List"
         navigationItem.backBarButtonItem = backItem
+        navigaitonTitles = "Add travel"
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
         
     }
@@ -129,6 +131,7 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         choosenId = arrayId[indexPath.row]
         choosenCountry = arrayCountry[indexPath.row]
+        navigaitonTitles = "Your travel"
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -179,6 +182,7 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
             let destinationVC = segue.destination as! DetailsPage
             destinationVC.selectedCountry = choosenCountry
             destinationVC.selectedId = choosenId
+            destinationVC.navigationTitles = navigaitonTitles
         }
     }
     
