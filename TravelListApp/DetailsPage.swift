@@ -122,6 +122,7 @@ class DetailsPage: UIViewController, (UIImagePickerControllerDelegate & UINaviga
             
             searchButton.isEnabled = true
             saveButton.isEnabled = true
+            imageview.image = UIImage(named: "image.png")
             
         }
         

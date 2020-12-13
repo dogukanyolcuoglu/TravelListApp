@@ -68,8 +68,12 @@ class ListPage: UIViewController,UITableViewDelegate,UITableViewDataSource {
         do {
             let results = try context.fetch(fetchEntity)
             if results.count > 0 {
+                
                 arrayCountry.removeAll(keepingCapacity: false)
                 arrayId.removeAll(keepingCapacity: false)
+                arrayImage.removeAll(keepingCapacity: false)
+                arrayCity.removeAll(keepingCapacity: false)
+                
                 
                 for result in results as! [NSManagedObject] {
                     if let id = result.value(forKey: "id") as? UUID {
